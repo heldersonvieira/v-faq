@@ -2,15 +2,15 @@ import { createStore } from 'vuex';
 
 export default createStore({
     state: {
-        faq: [],
+        categories: [],
         chosenCategory: [],
         chosenQuestion: [],
         currentComponent: 'Categories',
     },
 
     mutations: {
-        SET_FAQ(state, data) {
-            state.faq = data;
+        SET_CATEGORIES(state, data) {
+            state.categories = data;
         },
 
         SET_CHOSEN_CATEGORY(state, data) {
@@ -31,8 +31,8 @@ export default createStore({
             context.commit('SET_CURRENT_COMPONENT', component);
         },
 
-        fetchFaq(context, faq) {              
-            context.commit('SET_FAQ', faq)
+        fetchCategories(context, categories) {              
+            context.commit('SET_CATEGORIES', categories)
         },
 
         setChosenCategory(context, category) {
@@ -45,8 +45,8 @@ export default createStore({
     },
 
     getters: {
-        $faqData(state) {
-            return state.faq
+        $categories(state) {
+            return state.categories
         },
 
         $chosenCategory(state) {

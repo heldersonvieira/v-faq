@@ -28,14 +28,14 @@ export default {
 
     computed: {
         $faqCategories() {
-            return this.$store.getters.$faqData;
+            return this.$store.getters.$categories;
         },
     },
 
     async created() {
-        const getFaq = await this.$api.get('faqCategories');
+        const categories = await this.$api.get('faqCategories');
 
-        this.$store.dispatch('fetchFaq', getFaq);
+        this.$store.dispatch('fetchCategories', categories);
     },
 
     methods: {
